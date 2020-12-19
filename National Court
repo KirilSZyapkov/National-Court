@@ -1,0 +1,22 @@
+function nationalCourt(input) {
+    let firstEmployee = Number(input.shift());
+    let secondEmployee = Number(input.shift());
+    let thirdEmployee = Number(input.shift());
+    let numStudents = Number(input.shift());
+    let neededTime = 0;
+    let sumStudents = firstEmployee + secondEmployee + thirdEmployee;
+
+    for (let a = 1; a > 0; a++) {
+        if (numStudents <= 0) {
+            break;
+        }
+        neededTime++;
+        if (neededTime % 4 === 0) {
+            continue;
+        } else {
+            numStudents -= sumStudents;
+        }
+
+    }
+    console.log(`Time needed: ${neededTime}h.`);
+}
